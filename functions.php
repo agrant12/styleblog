@@ -5,6 +5,13 @@
  * @package aThemes
  */
 
+// Rewrite custom post pagination
+
+function rewrite(){
+	add_rewrite_rule( 'styling/page/([^/]*)/?', 'index.php?pagename=styling&paged=$matches[1]', 'top' );
+}
+add_action( 'init', 'rewrite');
+
 if ( ! function_exists( 'athemes_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
