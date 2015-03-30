@@ -23,7 +23,7 @@
 		</div>	
 	<?php endif; ?>	
 
-	<div class="clearfix entry-content">
+	<div class="clearfix single-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -33,7 +33,7 @@
 		?>
 	<!-- .entry-content --></div>
 
-	<footer class="entry-meta entry-footer">
+	<footer class="entry-meta entry-footer entry-post">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', 'athemes' ) );

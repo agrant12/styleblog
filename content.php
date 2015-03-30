@@ -27,17 +27,6 @@
 		</div>
 	<?php endif; ?>	
 
-	<?php if ( ( is_search() && get_theme_mod('athemes_search_excerpt') =='' ) || ( is_home() && get_theme_mod('athemes_home_excerpt') =='' ) || ( is_archive() && get_theme_mod('athemes_arch_excerpt') =='' ) ) : ?>
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		<!-- .entry-summary --></div>
-	<?php else : ?>
-		<div class="clearfix entry-content">
-			<?php the_content( __( 'Continue Reading <span class="meta-nav">&rarr;</span>', 'athemes' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'athemes' ), 'after' => '</div>' ) ); ?>
-		<!-- .entry-content --></div>
-	<?php endif; ?>
-
 	<footer class="entry-meta entry-footer">
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<?php

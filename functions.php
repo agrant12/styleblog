@@ -9,6 +9,7 @@
 
 function rewrite(){
 	add_rewrite_rule( 'styling/page/([^/]*)/?', 'index.php?pagename=styling&paged=$matches[1]', 'top' );
+	//add_rewrite_rule( 'the-vault/page/([^/]*)/?', 'index.php?pagename=the-vault&paged=$matches[1]', 'top' );
 }
 add_action( 'init', 'rewrite');
 
@@ -50,6 +51,7 @@ function athemes_setup() {
 	add_image_size( 'thumb-small', 50, 50, true );
 	add_image_size( 'thumb-medium', 300, 135, true );
 	add_image_size( 'thumb-featured', 640, 250, true );
+	add_image_size( 'vault-featured', 326 );
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -228,3 +230,19 @@ require get_template_directory() . '/inc/customizer.php';
  * Dynamic styles
  */
 require get_template_directory() . '/styles.php';
+
+// Add Fontello Stylesheets
+add_action( 'init', 'fontello_icons' );
+
+function fontello_icons() {
+	wp_register_style( 'fontello-codes', get_bloginfo('stylesheet_directory') . '/css/fontello-codes.css', array(), '1.0', 'all' );
+	wp_register_style( 'fontello-embedded', get_bloginfo('stylesheet_directory') . '/css/fontello-embedded.css', array(), '1.0', 'all' );
+	wp_register_style( 'fontello', get_bloginfo('stylesheet_directory') . '/css/fontello.css', array(), '1.0', 'all' );
+	wp_register_style( 'fontello-ie7-codes', get_bloginfo('stylesheet_directory') . '/css/fontello-ie7-codes.css', array(), '1.0', 'all' );
+	wp_register_style( 'fontello-ie7', get_bloginfo('stylesheet_directory') . '/css/fontello-ie7.css', array(), '1.0', 'all' );
+	wp_enqueue_style( 'fontello-codes' );
+	wp_enqueue_style( 'fontello-embedded' );
+	wp_enqueue_style( 'fontello' );
+	wp_enqueue_style( 'fontello-ie7-codes' );
+	wp_enqueue_style( 'fontello-ie7' );
+}

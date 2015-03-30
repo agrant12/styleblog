@@ -47,17 +47,7 @@
 
 	<header id="masthead" class="clearfix container site-header" role="banner">
 		<div class="site-branding">
-			<?php if ( get_theme_mod('site_logo') ) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo esc_url(get_theme_mod('site_logo')); ?>" alt="<?php bloginfo('name'); ?>" /></a>
-			<?php else : ?>			
-				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-				<<?php echo $heading_tag; ?> class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
-					</a>
-				</<?php echo $heading_tag; ?>>
-				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
-			<?php endif; ?>
+			<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a></div>
 		<!-- .site-branding --></div>
 
 		<?php if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
@@ -68,6 +58,8 @@
 		<a href="#main-navigation" class="nav-open">Menu</a>
 		<a href="#" class="nav-close">Close</a>
 		<?php wp_nav_menu( array( 'container_class' => 'sf-menu', 'theme_location' => 'main' ) ); ?>
+		<?php get_search_form(); ?>
+		<!--<?php get_search_form(); ?> -->
 	<!-- #main-navigation --></nav>
 
 	<div id="main" class="site-main">

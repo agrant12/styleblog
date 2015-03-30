@@ -141,7 +141,7 @@ class aThemes_Social_Icons extends WP_Widget {
 				if( isset( $instance[$athemes_widgets_name] ) && 'widget_title' != $athemes_widgets_name ) { 
 					$athemes_widgets_field_value = esc_attr( $instance[$athemes_widgets_name] ); 
 					if( '' != $athemes_widgets_field_value ) {	?>
-					<li class="widget-si-<?php echo $athemes_widgets_name; ?>"><a href="<?php echo $athemes_widgets_field_value; ?>" title="<?php echo $athemes_widgets_title; ?>"><i class="ico-<?php echo $athemes_widgets_name; ?>"></i></a></li>
+					<li class="widget-si-<?php echo $athemes_widgets_name; ?>"><a target="_blank" href="<?php echo $athemes_widgets_field_value; ?>" title="<?php echo $athemes_widgets_title; ?>"><i class="ico-<?php echo $athemes_widgets_name; ?>"></i></a></li>
 					<?php }
 				}
 			}
